@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f7f6"><title>知行 · 发票管理</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="loginView" class="login-screen">
+    <div class="login-art"><div class="brand brand-light"><span class="brand-mark">知</span><span>知行财务</span></div><div class="art-copy"><p class="eyebrow">FINANCE WORKSPACE</p><h1>让每一张发票<br>都有迹可循。</h1><p>从申请、审核到开具登记，让财务流程清晰、高效、可追溯。</p></div><div class="art-foot">安全 · 有序 · 高效</div></div>
+    <div class="login-panel"><div class="login-box"><div class="brand brand-dark"><span class="brand-mark">知</span><span>知行财务</span></div><p class="eyebrow">INVOICE MANAGEMENT</p><h2>欢迎回来</h2><p class="muted">登录工作台以继续处理发票业务</p><form id="loginForm"><label>账号<input name="username" autocomplete="username" value="admin" required></label><label>密码<input name="password" type="password" autocomplete="current-password" placeholder="请输入密码" required></label><button class="btn btn-primary btn-wide">登录系统 <span>→</span></button></form><div id="loginError" class="error-text"></div><div class="login-hint">初始测试账号：admin　密码：abc12345</div><div class="login-copy">© 2026 知行企业财务工作台</div></div></div>
+  </div>
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar"><div class="brand brand-dark"><span class="brand-mark">知</span><span>知行财务<small>INVOICE DESK</small></span></div><div class="workspace-label">工作空间</div><nav id="nav"><button class="nav-item active" data-page="overview"><span class="nav-icon">⌂</span>工作台</button><button class="nav-item" data-page="requests"><span class="nav-icon">▤</span>开票申请 <b id="pendingBadge" class="badge hidden">0</b></button><button class="nav-item" data-page="ledger"><span class="nav-icon">▦</span>发票台账</button><button class="nav-item" data-page="reports"><span class="nav-icon">▥</span>统计报表</button><button class="nav-item admin-only hidden" data-page="users"><span class="nav-icon">♙</span>用户管理</button><button class="nav-item finance-only hidden" data-page="audits"><span class="nav-icon">◷</span>操作日志</button></nav><div class="side-bottom"><div class="help-card"><div class="help-dot">?</div><strong>需要帮助？</strong><p>查看操作指引，快速了解工作台。</p><a href="#" id="helpLink">了解更多 <span>↗</span></a></div><div class="side-meta">知行财务系统 <span>v1.0</span></div></div></aside>
+    <main class="main-area"><header class="topbar"><div class="breadcrumbs">财务工作台 <span>/</span> <strong id="crumb">工作台</strong></div><div class="top-actions"><button id="quickCreate" class="btn btn-primary btn-small">＋ 新建开票申请</button><span class="top-divider"></span><button class="icon-button" title="通知">♧<i></i></button><button id="userMenu" class="user-chip"><span id="avatar" class="avatar">财</span><span><strong id="userName">管理员</strong><small id="userRole">系统管理员</small></span><span class="chevron">⌄</span></button><button id="logoutBtn" class="logout-button" title="退出登录">↗</button></div></header><section id="content" class="content"></section></main>
+  </div>
+  <div id="modalRoot"></div><div id="toastRoot" class="toast-root"></div>
+  <script src="/app.js"></script>
+</body></html>
+
