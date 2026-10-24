@@ -1,0 +1,6 @@
+data/store.json
+.netlify
+node_modules
+.env
+.env.*
+
