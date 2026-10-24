@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS app_state (
+  singleton BOOLEAN PRIMARY KEY DEFAULT TRUE CHECK (singleton),
+  payload JSONB NOT NULL,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS app_sessions (
+  token TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  expires_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS login_attempts (
+  ip_key TEXT PRIMARY KEY,
+  started_at TIMESTAMPTZ NOT NULL,
+  count INTEGER NOT NULL DEFAULT 0
+);
+
